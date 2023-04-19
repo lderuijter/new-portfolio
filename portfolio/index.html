@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Lucas de Ruijter</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/blood.css">
+	<link rel="stylesheet" href="dist/style.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+	<div class="slides">
+		<section data-background-image="public/loop-background.gif">
+			<h3>Welkom op mijn website!</h3>
+			<div class="container">
+				<div class="col">
+					<img src="public/person-icon.png">
+				</div>
+
+				<div class="col intro">
+					<p class="writer" id="typewriter" data-typewriter="Ik ben een junior software developer"></p>
+					<span class="blinking-cursor">|</span>
+				</div>
+
+				<div class="col icons">
+					<p>
+						<img src="public/github-icon.png">
+						<img src="public/linkedin-icon.png">
+					</p>
+				</div>
+			</div>
+			<p>Rechts onder zijn de controls -></p>
+		</section>
+		<section>
+			Persoonlijk profiel
+			<p>informatie over mezelf</p>
+		</section>
+		<section>
+			Opleiding
+			<p>waarom deze opleiding</p>
+		</section>
+		<section>
+			Showcase
+			<section>
+				Project 1
+			</section>
+			<section>
+				Project 2
+			</section>
+		</section>
+		<section>
+			Studiemonitor
+			<p>cijfers</p>
+		</section>
+		<section>
+			Contact
+			<p>contact form</p>
+		</section>
+	</div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+	// More info about initialization & config:
+	// - https://revealjs.com/initialization/
+	// - https://revealjs.com/config/
+	Reveal.initialize({
+		hash: true,
+
+		// Learn about plugins: https://revealjs.com/plugins/
+		plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+	});
+
+	let typewriter = function(txt) {
+		let container = document.getElementById('typewriter'),
+				speed = 50,
+				i = 0,
+				wordsObj = txt.split(" ")
+		container.textContent = "";
+		console.log(txt)
+		runAllWords();
+		function runAllWords() {
+
+			if (i < wordsObj.length) {
+				let a = (i == 0) ? i : i - 1;
+				setTimeout(function() {
+					showWord(wordsObj[i], 0)
+				}, wordsObj[a].length * speed);
+			}
+		}
+
+		function showWord(word, countWord) {
+			if (countWord < word.length) {
+				setTimeout(function() {
+					showLetter(word, countWord)
+				}, speed);
+			} else {
+				container.textContent = container.textContent + " ";
+				i += 1;
+				runAllWords();
+			}
+			if (i === wordsObj.length) {
+				console.log('complete')
+			}
+		}
+
+		function showLetter(word, countWord) {
+			container.textContent = container.textContent + word[countWord];
+			showWord(word, countWord + 1);
+		}
+	}
+
+
+	let i = 0;
+	function myLoop () {
+//  create a loop function
+		let dataType = document.getElementById('typewriter').dataset.typewriter,
+				w = dataType.split(',')
+		setTimeout(function () {
+			typewriter(w[i]);
+			i++;
+			if (i < w.length) {
+				myLoop();
+			}
+		}, 1000)
+	}
+
+	myLoop();
+</script>
+</body>
+</html>
