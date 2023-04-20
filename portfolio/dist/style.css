@@ -14,17 +14,32 @@
 
 .icons > p {
     margin-right: 100px;
+    display: flex;
 }
 
-.icons > p > img {
-    height: 75px;
-    width: 75px;
+.pfp {
+    border-radius: 50%;
+    box-shadow: #1f1f1f 0 0 0 15px;
+}
+
+.icon-images {
+    margin: 0 !important;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.icon-link {
+    display: inherit;
+    height: 75px !important;
+    cursor: default;
+    padding: 5px;
 }
 
 .writer, span{
     font-size: 3rem;
     display:inline;
 }
+
 .blinking-cursor {
     color: white;
     animation: 1s blink step-end infinite;
@@ -37,4 +52,10 @@
     50% {
         color: white;
     }
+}
+
+.personal {
+    background-color: black;
+    border-radius: 15px;
+    padding: 15px;
 }
