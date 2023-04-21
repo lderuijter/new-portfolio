@@ -55,7 +55,28 @@
 }
 
 .personal {
-    background-color: black;
+    background-color: white;
     border-radius: 15px;
-    padding: 15px;
+    padding: 20px;
+    font-size: 25px;
+    text-shadow: none !important;
+}
+
+@media screen and (max-width: 600px) {
+    .personal {
+        max-width: 320px;
+        text-align: center;
+        margin: auto !important;
+    }
+}
+
+#to-personal-profile {
+    color: black;
+}
+
+.pfp-icon {
+    border-radius: 50%;
+    width: 125px;
+    height: 125px;
+    margin-bottom: 10px;
 }
