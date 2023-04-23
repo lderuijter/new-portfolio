@@ -8,11 +8,14 @@
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
-	<link rel="stylesheet" href="dist/theme/blood.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
 	<link rel="stylesheet" href="dist/style.css">
 
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
 <div class="reveal">
@@ -56,29 +59,45 @@
 					</div>
 				</div>
 			</section>
-			<section id="personal-profile" data-background-image="">
-				<p class="personal">
-					Ik ben Lucas de Ruijter, ik ben 19 jaar oud en ik ben geboren in Goes. Mijn karakter is te beschrijven als leergierig,
+			<section id="personal-profile">
+				<p class="panel">
+					Ik ben Lucas de Ruijter, ik ben 19 jaar oud en
+					ik ben geboren in Goes. Mijn karakter is te beschrijven als leergierig,
 					nieuwsgierig en nauwkeurig. Mijn sterke kanten zijn dat ik kan doorzetten en goed kan presteren als het nodig is.
-					Waar ik veel energie van krijg is het oplossen van problemen tijdens het programmeren en wanneer de applicatie volledig werkt.
+					Waar ik veel energie van krijg is het oplossen van problemen tijdens het
+					programmeren en wanneer de applicatie volledig werkt.
 				</p>
 			</section>
 			<section>
-				<p class="personal">
+				<p class="panel">
 					Ik doe de opleiding software developer met de reden dat ik het leuk en interessant vind. Ik ben gepassioneerd over het
 					programmeren omdat er altijd wel iets nieuws te leren valt en omdat er veel verschillende manieren zijn om code te schrijven.
 				</p>
 			</section>
 			<section>
-				<p class="personal">
+				<p class="panel">
 					Mijn hobbies zijn programmeren, gamen, anime kijken, muziek luisteren en steppen. Mijn ambitie is om een goede software developer
 					te worden en om altijd te verbeteren in mijn specialiteiten. Mijn toekomst doel is om een succesvolle programmeur te worden.
 				</p>
 			</section>
 		</section>
-		<section>
+		<section data-background-image="public/course-background.jpg">
 			Opleiding
-			<p>waarom deze opleiding</p>
+			<section>
+				<p>
+					Waarom deze opleiding?
+					<a onclick="goToCoursePage()" href="#/course">⬇️</a>
+				</p>
+			</section>
+			<section id="course">
+				<p class="panel-gradient r-fit-text" id="course-fast">
+					Software Developer opleiding - Scalda Vlissingen - 4 jaar
+				</p>
+				<p class="panel" id="course-slow">
+					Ik heb voor deze opleiding gekozen omdat ik altijd al interesse had in de sector ICT en het leek me leuk om te coderen.
+					Dit beroep past goed bij me omdat ik graag achter een computer zit en ik ben ook geïnteresseerd in de code die ik schrijf.
+				</p>
+			</section>
 		</section>
 		<section>
 			Showcase
@@ -112,6 +131,17 @@
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
 <script>
+	function goToCoursePage() {
+		if(!document.getElementById("course-fast").classList.contains("course-fast") &&
+				!document.getElementById("course-slow").classList.contains("course-slow")) {
+			document.getElementById("course-fast").classList.add("course-fast");
+			document.getElementById("course-slow").classList.add("course-slow");
+		}
+		setTimeout(() => {
+			document.getElementById("course-fast").classList.remove("course-fast");
+			document.getElementById("course-slow").classList.remove("course-slow");
+		}, 2000)
+	}
 	// More info about initialization & config:
 	// - https://revealjs.com/initialization/
 	// - https://revealjs.com/config/
@@ -128,7 +158,6 @@
 				i = 0,
 				wordsObj = txt.split(" ")
 		container.textContent = "";
-		console.log(txt)
 		runAllWords();
 		function runAllWords() {
 
@@ -149,9 +178,6 @@
 				container.textContent = container.textContent + " ";
 				i += 1;
 				runAllWords();
-			}
-			if (i === wordsObj.length) {
-				console.log('complete')
 			}
 		}
 

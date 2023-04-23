@@ -1,3 +1,7 @@
+* {
+    text-shadow: none !important;
+}
+
 .container{
     display: flex;
 }
@@ -54,24 +58,48 @@
     }
 }
 
-.personal {
+.panel {
     background-color: white;
+    color: black;
     border-radius: 15px;
     padding: 20px;
     font-size: 25px;
-    text-shadow: none !important;
+}
+
+.panel-gradient {
+    background: linear-gradient(to right, red, blue);
+    box-shadow: black 0 0 7px 7px;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 25px;
+}
+
+.course-fast {
+    animation: open 1000ms;
+}
+
+.course-slow {
+    animation: open 2000ms;
+}
+
+@keyframes open {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @media screen and (max-width: 600px) {
-    .personal {
+    .panel {
         max-width: 320px;
         text-align: center;
         margin: auto !important;
     }
-}
-
-#to-personal-profile {
-    color: black;
 }
 
 .pfp-icon {
@@ -79,4 +107,5 @@
     width: 125px;
     height: 125px;
     margin-bottom: 10px;
+    box-shadow: #0a2fbe 0 0 3px 8px;
 }
