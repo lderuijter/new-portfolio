@@ -52,15 +52,16 @@
 				<div class="container">
 					<div class="col">
 						<img src="public/pfp-icon.jpg" class="pfp-icon">
-						<p style="color: white;">
-							Laat persoonlijk profiel zien!
-							<a href="#/personal-profile">⬇️</a>
-						</p>
+						<a class="container-to-personal" onclick="goToFirstPersonalPanel()" href="#/personal-profile">
+							<p class="to-personal" style="color: white;">
+								Laat persoonlijk profiel zien! <p class="click" style="color: black;">Click here!</p>
+							</p>
+						</a>
 					</div>
 				</div>
 			</section>
 			<section id="personal-profile">
-				<p class="panel">
+				<p class="panel" id="first-personal-panel">
 					Ik ben Lucas de Ruijter, ik ben 19 jaar oud en
 					ik ben geboren in Goes. Mijn karakter is te beschrijven als leergierig,
 					nieuwsgierig en nauwkeurig. Mijn sterke kanten zijn dat ik kan doorzetten en goed kan presteren als het nodig is.
@@ -102,7 +103,10 @@
 		<section>
 			Showcase
 			<section>
-				CSS level voorbeeld met code als je erop klikt
+				<img src="public/css-level.png">
+				<pre><code>
+					body{width:200;height:200;border-radius:50%;top:42;left:92;background:#FFF1C1}i{background:#FE5F55;width:100;height:163;top:70;left:69;position:absolute;rotate:45deg;box-shadow:0 167q 0 31q#FE5F55}*{background:#293462;position:fixed;overflow:hidden
+				</code></pre>
 			</section>
 			<section>
 				Project 1
@@ -134,13 +138,22 @@
 	function goToCoursePage() {
 		if(!document.getElementById("course-fast").classList.contains("course-fast") &&
 				!document.getElementById("course-slow").classList.contains("course-slow")) {
-			document.getElementById("course-fast").classList.add("course-fast");
-			document.getElementById("course-slow").classList.add("course-slow");
+			document.getElementById("course-fast").classList.add("course-fast")
+			document.getElementById("course-slow").classList.add("course-slow")
 		}
 		setTimeout(() => {
-			document.getElementById("course-fast").classList.remove("course-fast");
-			document.getElementById("course-slow").classList.remove("course-slow");
+			document.getElementById("course-fast").classList.remove("course-fast")
+			document.getElementById("course-slow").classList.remove("course-slow")
 		}, 2000)
+	}
+
+	function goToFirstPersonalPanel() {
+		if(!document.getElementById("first-personal-panel").classList.contains("round-border-animation")) {
+			document.getElementById("first-personal-panel").classList.add("round-border-animation")
+		}
+		setTimeout(() => {
+			document.getElementById("first-personal-panel").classList.remove("round-border-animation")
+		}, 1800)
 	}
 	// More info about initialization & config:
 	// - https://revealjs.com/initialization/
