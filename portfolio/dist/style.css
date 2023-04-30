@@ -177,3 +177,64 @@
         box-shadow: none;
     }
 }
+
+.programming, .sen, .frontend, .database, .scrum, .goal {
+    display: flex;
+    cursor: pointer;
+}
+
+.programming, .sen, .frontend, .database, .scrum, .goal > img {
+    animation: unscale 500ms forwards;
+    scale: 0.65;
+}
+
+.programming:hover, .sen:hover, .frontend:hover, .database:hover, .scrum:hover, .goal:hover > img {
+    animation: scale 500ms forwards;
+}
+
+@keyframes scale {
+    from {
+        scale: 0.65;
+    }
+    to {
+        scale: 1;
+    }
+}
+
+@keyframes unscale {
+    from {
+        scale: 1;
+    }
+    to {
+        scale: 0.65;
+    }
+}
+
+.hover-underline {
+    margin: auto !important;
+    font-size: 40px !important;
+    width: fit-content;
+    animation: red_shadow 2000ms infinite;
+}
+
+@keyframes red_shadow {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: #ff0000 0 5px 0 0;
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+
+.programming-span, .sen-span, .frontend-span, .database-span, .scrum-span, .goal-span {
+    display: none;
+    font-size: 17px !important;
+    color: black;
+    background: white;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 5px;
+}

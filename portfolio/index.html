@@ -100,9 +100,45 @@
 				</p>
 			</section>
 			<section>
-				<p class="r-fit-text">
-					Overzicht van alle vakken
-				</p>
+				<h1 class="hover-underline">Hover us!</h1>
+				<div class="container">
+					<div class="col">
+							<a class="programming">
+								<img src="public/programming.png">
+							</a>
+							<div class="programming-span">Programmeren</div>
+					</div>
+					<div class="col">
+							<a class="sen">
+								<img src="public/sen.png">
+							</a>
+							<div class="sen-span">Software Engeneering</div>
+					</div>
+					<div class="col">
+							<a class="frontend">
+								<img src="public/front-end.png">
+							</a>
+							<div class="frontend-span">Front end</div>
+					</div>
+					<div class="col">
+							<a class="database">
+								<img src="public/database.png">
+							</a>
+							<div class="database-span">Database</div>
+					</div>
+					<div class="col">
+							<a class="scrum">
+								<img src="public/scrum.png">
+							</a>
+							<div class="scrum-span">Scrum</div>
+					</div>
+					<div class="col">
+							<a class="goal">
+								<img src="public/goal.png">
+							</a>
+							<div class="goal-span">Loopbaansturing</div>
+					</div>
+				</div>
 			</section>
 		</section>
 		<section>
@@ -140,6 +176,54 @@
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
 <script>
+	$(".programming").on({
+		mouseenter: function () {
+			let items = document.getElementsByClassName("programming-span");
+			for (let i=0; i < items.length; i++) {
+				items[i].style.display = 'block';
+			}
+		}
+	});
+	$(".sen").on({
+		mouseenter: function () {
+			let items = document.getElementsByClassName("sen-span");
+			for (let i=0; i < items.length; i++) {
+				items[i].style.display = 'block';
+			}
+		}
+	});
+	$(".frontend").on({
+		mouseenter: function () {
+			let items = document.getElementsByClassName("frontend-span");
+			for (let i=0; i < items.length; i++) {
+				items[i].style.display = 'block';
+			}
+		}
+	});
+	$(".database").on({
+		mouseenter: function () {
+			let items = document.getElementsByClassName("database-span");
+			for (let i=0; i < items.length; i++) {
+				items[i].style.display = 'block';
+			}
+		}
+	});
+	$(".scrum").on({
+		mouseenter: function () {
+			let items = document.getElementsByClassName("scrum-span");
+			for (let i=0; i < items.length; i++) {
+				items[i].style.display = 'block';
+			}
+		}
+	});
+	$(".goal").on({
+		mouseenter: function () {
+			let items = document.getElementsByClassName("goal-span");
+			for (let i=0; i < items.length; i++) {
+				items[i].style.display = 'block';
+			}
+		}
+	});
 	function goToCoursePage() {
 		if(!document.getElementById("course-fast").classList.contains("course-fast") &&
 				!document.getElementById("course-slow").classList.contains("course-slow")) {
