@@ -11,7 +11,7 @@
 }
 
 .intro {
-    margin-top: 20px;
+    margin-top: 60px;
 }
 
 .intro > p {
@@ -24,6 +24,7 @@
 }
 
 .pfp {
+    scale: 0.7;
     border-radius: 50%;
     box-shadow: #1f1f1f 0 0 0 15px;
 }
@@ -39,6 +40,7 @@
     height: 75px !important;
     cursor: default;
     padding: 5px;
+    margin-top: 60px;
 }
 
 .writer, span{
