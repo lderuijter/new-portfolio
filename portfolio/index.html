@@ -11,11 +11,6 @@
 	<link rel="stylesheet" href="dist/theme/black.css">
 	<link rel="stylesheet" href="dist/style.css">
 
-	<!-- Theme used for syntax highlighted code -->
-	<link rel="stylesheet" href="plugin/highlight/monokai.css">
-
-	<!-- jquery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
 <div class="reveal">
@@ -24,7 +19,7 @@
 			<h3>Welkom op mijn website!</h3>
 			<div class="container">
 				<div class="col">
-					<img class="pfp" src="public/lucas.jpg">
+					<img class="pfp" src="public/lucas.jpg" alt="">
 				</div>
 
 				<div class="col intro">
@@ -35,10 +30,10 @@
 				<div class="col icons">
 					<p>
 						<a class="icon-link" target="_blank" href="https://github.com/lderuijter">
-							<img class="icon-images" src="public/github-icon.png">
+							<img class="icon-images" src="public/github-icon.png" alt="">
 						</a>
 						<a class="icon-link" target="_blank" href="https://www.linkedin.com/in/lucas-de-ruijter-61211a215/">
-							<img class="icon-images" src="public/linkedin-icon.png">
+							<img class="icon-images" src="public/linkedin-icon.png" alt="">
 						</a>
 					</p>
 				</div>
@@ -53,11 +48,11 @@
 			<section>
 				<div class="container">
 					<div class="col">
-						<img src="public/pfp-icon.jpg" class="pfp-icon">
+						<img src="public/pfp-icon.jpg" class="pfp-icon" alt="">
 						<a class="container-to-personal" onclick="goToFirstPersonalPanel()" href="#/personal-profile">
-							<p class="to-personal" style="color: white;">
+							<div class="to-personal" style="color: white;">
 								Laat persoonlijk profiel zien! <p class="click" style="color: black;">Click here!</p>
-							</p>
+							</div>
 						</a>
 					</div>
 				</div>
@@ -106,37 +101,37 @@
 				<div class="container">
 					<div class="col">
 							<a class="programming">
-								<img src="public/programming.png">
+								<img src="public/programming.png" alt="">
 							</a>
 							<div class="programming-div">Programmeren</div>
 					</div>
 					<div class="col">
 							<a class="sen">
-								<img src="public/sen.png">
+								<img src="public/sen.png" alt="">
 							</a>
 							<div class="sen-div">Software Engeneering</div>
 					</div>
 					<div class="col">
 							<a class="frontend">
-								<img src="public/front-end.png">
+								<img src="public/front-end.png" alt="">
 							</a>
 							<div class="frontend-div">Front end</div>
 					</div>
 					<div class="col">
 							<a class="database">
-								<img src="public/database.png">
+								<img src="public/database.png" alt="">
 							</a>
 							<div class="database-div">Database</div>
 					</div>
 					<div class="col">
 							<a class="scrum">
-								<img src="public/scrum.png">
+								<img src="public/scrum.png" alt="">
 							</a>
 							<div class="scrum-div">Scrum</div>
 					</div>
 					<div class="col">
 							<a class="goal">
-								<img src="public/goal.png">
+								<img src="public/goal.png" alt="">
 							</a>
 							<div class="goal-div">Loopbaansturing</div>
 					</div>
@@ -147,7 +142,7 @@
 			Showcase
 			<section>
 				<div class="css-image-alignment">
-					<img src="public/css-level.png">
+					<img src="public/css-level.png" alt="">
 				</div>
 				<a class="showcase-links" target="_blank" href="public/code.pdf">
 					<span class="showcase-css">Code</span>
@@ -159,7 +154,7 @@
 			<section>
 				<div class="container">
 					<div class="col">
-						<img src="https://i.imgur.com/sciFCCq.png">
+						<img src="https://i.imgur.com/sciFCCq.png" alt="">
 					</div>
 					<div class="col">
 						<h1 style="font-size: 35px;">Slidehub</h1>
@@ -182,7 +177,7 @@
 						</p>
 					</div>
 					<div class="col">
-						<img src="public/symfony.png">
+						<img src="public/symfony.png" alt="">
 					</div>
 				</div>
 			</section>
@@ -312,54 +307,39 @@
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
 <script>
-	$(".programming").on({
-		mouseenter: function () {
-			let items = document.getElementsByClassName("programming-div");
-			for (let i=0; i < items.length; i++) {
-				items[i].style.display = 'block';
-			}
+	const allElements = [
+		document.querySelector(".programming"),
+		document.querySelector(".sen"),
+		document.querySelector(".frontend"),
+		document.querySelector(".database"),
+		document.querySelector(".scrum"),
+		document.querySelector(".goal"),
+	];
+
+	const allDivs = [
+		document.querySelector(".programming-div"),
+		document.querySelector(".sen-div"),
+		document.querySelector(".frontend-div-div"),
+		document.querySelector(".database-div"),
+		document.querySelector(".scrum-div"),
+		document.querySelector(".goal-div"),
+	];
+
+	showItemsForDiv(allElements, allDivs);
+
+	function showItemsForDiv(elementList, divList) {
+		for (const element in elementList) {
+			element.on(() => {
+					for (const items in divList) {
+						for (let i=0; i < items.length; i++) {
+							items[i].style.display = 'block';
+						}
+					}
+				}
+			);
 		}
-	});
-	$(".sen").on({
-		mouseenter: function () {
-			let items = document.getElementsByClassName("sen-div");
-			for (let i=0; i < items.length; i++) {
-				items[i].style.display = 'block';
-			}
-		}
-	});
-	$(".frontend").on({
-		mouseenter: function () {
-			let items = document.getElementsByClassName("frontend-div");
-			for (let i=0; i < items.length; i++) {
-				items[i].style.display = 'block';
-			}
-		}
-	});
-	$(".database").on({
-		mouseenter: function () {
-			let items = document.getElementsByClassName("database-div");
-			for (let i=0; i < items.length; i++) {
-				items[i].style.display = 'block';
-			}
-		}
-	});
-	$(".scrum").on({
-		mouseenter: function () {
-			let items = document.getElementsByClassName("scrum-div");
-			for (let i=0; i < items.length; i++) {
-				items[i].style.display = 'block';
-			}
-		}
-	});
-	$(".goal").on({
-		mouseenter: function () {
-			let items = document.getElementsByClassName("goal-div");
-			for (let i=0; i < items.length; i++) {
-				items[i].style.display = 'block';
-			}
-		}
-	});
+	}
+
 	function goToCoursePage() {
 		if(!document.getElementById("course-fast").classList.contains("course-fast") &&
 				!document.getElementById("course-slow").classList.contains("course-slow")) {
@@ -380,15 +360,6 @@
 			document.getElementById("first-personal-panel").classList.remove("round-border-animation")
 		}, 1800)
 	}
-	// More info about initialization & config:
-	// - https://revealjs.com/initialization/
-	// - https://revealjs.com/config/
-	Reveal.initialize({
-		hash: true,
-
-		// Learn about plugins: https://revealjs.com/plugins/
-		plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-	});
 
 	let typewriter = function(txt) {
 		let container = document.getElementById('typewriter'),
@@ -400,7 +371,7 @@
 		function runAllWords() {
 
 			if (i < wordsObj.length) {
-				let a = (i == 0) ? i : i - 1;
+				let a = (i === 0) ? i : i - 1;
 				setTimeout(function() {
 					showWord(wordsObj[i], 0)
 				}, wordsObj[a].length * speed);
@@ -426,11 +397,10 @@
 	}
 
 
-	let i = 0;
 	function myLoop () {
-//  create a loop function
 		let dataType = document.getElementById('typewriter').dataset.typewriter,
 				w = dataType.split(',')
+		let i = 0;
 		setTimeout(function () {
 			typewriter(w[i]);
 			i++;
