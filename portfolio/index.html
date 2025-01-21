@@ -61,7 +61,7 @@
 			</section>
 			<section id="personal-profile">
 				<p class="panel" id="first-personal-panel">
-					Ik ben Lucas de Ruijter, ik ben 21 jaar oud en
+					Ik ben Lucas de Ruijter, ik ben <span id="age-placeholder"></span> jaar oud en
 					ik ben geboren in Goes. Mijn karakter is te beschrijven als leergierig,
 					nieuwsgierig en nauwkeurig. Mijn sterke kanten zijn dat ik kan doorzetten en goed kan presteren als het nodig is.
 					Waar ik veel energie van krijg is het oplossen van problemen tijdens het
@@ -309,8 +309,6 @@
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
 <script>
-	import Reveal from "./js";
-
 	Reveal.initialize({
 		hash: true,
 		plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
@@ -328,7 +326,7 @@
 	const allDivs = [
 		document.querySelector(".programming-div"),
 		document.querySelector(".sen-div"),
-		document.querySelector(".frontend-div-div"),
+		document.querySelector(".frontend-div"),
 		document.querySelector(".database-div"),
 		document.querySelector(".scrum-div"),
 		document.querySelector(".goal-div"),
@@ -337,15 +335,19 @@
 	showItemsForDiv(allElements, allDivs);
 
 	function showItemsForDiv(elementList, divList) {
-		for (const element in elementList) {
-			element.on(() => {
-					for (const items in divList) {
-						for (let i=0; i < items.length; i++) {
-							items[i].style.display = 'block';
-						}
-					}
-				}
-			);
+		for (let i = 0; i < elementList.length; i++) {
+			const element = elementList[i];
+			const targetDiv = divList[i];
+
+			if (!element || !targetDiv) continue;
+
+			element.addEventListener("mouseenter", () => {
+				targetDiv.style.display = "block";
+			});
+
+			element.addEventListener("mouseleave", () => {
+				targetDiv.style.display = "none";
+			});
 		}
 	}
 
@@ -420,6 +422,51 @@
 	}
 
 	myLoop();
+
+	function calculateAge(birthday) {
+		const birthDate = new Date(birthday);
+		const today = new Date();
+		let age = today.getFullYear() - birthDate.getFullYear();
+
+		const nextBirthday = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+		if (today < nextBirthday) {
+			age--;
+		}
+
+		return age;
+	}
+
+	function updateAge(birthday) {
+		const age = calculateAge(birthday);
+		const agePlaceholder = document.getElementById("age-placeholder");
+
+		if (agePlaceholder) {
+			agePlaceholder.textContent = age.toString();
+		}
+	}
+
+	const myBirthday = "2003-05-21";
+
+	updateAge(myBirthday);
+
+	function scheduleNextAgeUpdate(birthday) {
+		const today = new Date();
+		const birthDate = new Date(birthday);
+		let nextBirthday = new Date(today.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+
+		if (today > nextBirthday) {
+			nextBirthday.setFullYear(today.getFullYear() + 1);
+		}
+
+		const timeUntilNextBirthday = nextBirthday - today;
+
+		setTimeout(() => {
+			updateAge(birthday);
+			scheduleNextAgeUpdate(birthday);
+		}, timeUntilNextBirthday);
+	}
+
+	scheduleNextAgeUpdate(myBirthday);
 </script>
 </body>
 </html>
