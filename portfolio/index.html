@@ -53,14 +53,14 @@
 			</div>
 		</section>
 		<section id="to-personal-profile" data-background-image="public/personal-profile-background.jpg">
-			<p style="color: white;">Persoonlijk profiel</p>
+			<p class="personal-profile-text">Persoonlijk profiel</p>
 			<section>
 				<div class="container">
 					<div class="col">
 						<img src="public/pfp-icon.jpg" class="pfp-icon" alt="">
 						<a class="container-to-personal" onclick="goToFirstPersonalPanel()" href="#/personal-profile">
-							<div class="to-personal" style="color: white;">
-								Laat persoonlijk profiel zien! <p class="click" style="color: black;">Click here!</p>
+							<div class="to-personal">
+								Laat persoonlijk profiel zien! <p class="click">Click here!</p>
 							</div>
 						</a>
 					</div>
@@ -68,7 +68,7 @@
 			</section>
 			<section id="personal-profile">
 				<p class="panel" id="first-personal-panel">
-					Hallo! Mijn naam is Lucas de Ruijter, ik ben <span id="age-placeholder"></span> jaar oud en geboren in Goes.
+					Hallo! Mijn naam is Lucas de Ruijter, ik ben <span class="age-placeholder" id="age-placeholder"></span> jaar oud en geboren in Goes.
 					Mijn karakter is te beschrijven als leergierig, nieuwsgierig en nauwkeurig.
 					Mijn sterke kanten zijn dat ik goed kan presteren onder druk en dat ik een groot doorzettingsvermogen heb.
 					Waar ik veel energie van krijg is het oplossen van problemen tijdens het programmeren en wanneer de applicatie volledig werkt.
@@ -151,11 +151,11 @@
 			<section>
 				<div class="container">
 					<div class="col">
-						<img style="border-radius: 15px; box-shadow: #1f1f1f 10px 10px;" src="public/generate-form.png" alt="">
+						<img class="generate-form-image" src="public/generate-form.png" alt="">
 					</div>
-					<div class="col" style="margin-top: 100px; margin-left: 80px;">
-						<h1 style="font-size: 35px;">Stage Reyez!</h1>
-						<div style="font-size: 20px;">
+					<div class="col stage-container">
+						<div class="stage-h1">Stage Reyez!</div>
+						<div class="stage-text-container">
 							<p>
 								Tijdens mijn stage bij het bedrijf Reyez! in Alkmaar heb ik veel geleerd over PHP en Laravel.
 							</p>
@@ -172,10 +172,10 @@
 				</div>
 			</section>
 			<section>
-				<div class="container" style="margin-right: 50px;">
-					<div class="col" style="margin-right: 75px;">
-						<h1 style="font-size: 35px;">Pasimo</h1>
-						<div style="font-size: 20px;">
+				<div class="container pasimo-container">
+					<div class="col pasimo-col">
+						<div class="pasimo-h1">Pasimo</div>
+						<div class="pasimo-text-container">
 							<p>
 								Pasimo is het examenproject waar ik aan werk op school.
 								Pasimo werkt als een in en uitklok systeem voor de studenten met hun Scalda pas.
@@ -191,8 +191,8 @@
 							</p>
 						</div>
 					</div>
-					<div class="col" style="margin: auto;">
-						<img style="scale: 1.7; margin-left: 120px;" src="public/pasimo.png" alt="">
+					<div class="col pasimo-image-container">
+						<img class="pasimo-image" src="public/pasimo.png" alt="">
 					</div>
 				</div>
 			</section>
@@ -202,8 +202,8 @@
 						<img src="https://i.imgur.com/sciFCCq.png" alt="">
 					</div>
 					<div class="col">
-						<h1 style="font-size: 35px;">Slidehub</h1>
-						<p style="font-size: 20px; margin: 25px;">
+						<div class="slidehub-h1">Slidehub</div>
+						<p class="slidehub-text">
 							In het derde leerjaar ben ik samen met 5 anderen begonnen aan de wederopbouw van Slidehub.
 							De webapplicatie is gebouwd om slides aan te kunnen maken voor de slideshow op de grote schermen,
 							om zo belangrijke informatie over te brengen naar de studenten.

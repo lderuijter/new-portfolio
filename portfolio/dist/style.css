@@ -2,22 +2,6 @@
     text-shadow: none !important;
 }
 
-.container{
-    display: flex;
-}
-
-.col{
-    flex: 1;
-}
-
-.intro {
-    margin-top: 60px;
-}
-
-.intro > p {
-    font-size: 30px;
-}
-
 .icons > p {
     margin-right: 100px;
     display: flex;
@@ -97,11 +81,17 @@
     width: fit-content;
 }
 
+.generate-form-image {
+    border-radius: 15px;
+    box-shadow: #1f1f1f 10px 10px;
+}
+
 .click {
     position: absolute;
     right: -30px;
     top: -18px;
     background: white;
+    color: black;
     padding: 10px;
     border-radius: 10px;
     height: fit-content;
@@ -114,6 +104,7 @@
 .to-personal {
     animation: yellow_shadow 2000ms infinite;
     background: linear-gradient(to top, lightskyblue, lightseagreen);
+    color: white;
     border-radius: 10px;
     padding: 15px;
     font-size: 25px;
@@ -344,7 +335,7 @@ input[type=submit]:hover {
     font-size: 24px;
 }
 
-#age-placeholder {
+.age-placeholder {
     font-size: 25px;
 }
 
@@ -376,4 +367,74 @@ input[type=submit]:hover {
     border-radius: 100%;
     box-shadow: white 0 0 0 10px;
     scale: 0.65;
+}
+
+.personal-profile-text {
+    color: white;
+}
+
+.container{
+    display: flex;
+}
+
+.col{
+    flex: 1;
+}
+
+.intro {
+    margin-top: 60px;
+}
+
+.intro > p {
+    font-size: 30px;
+}
+
+.stage-container {
+    margin-top: 100px;
+    margin-left: 80px;
+}
+
+.stage-h1 {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.stage-text-container {
+    font-size: 20px;
+}
+
+.pasimo-container {
+    margin-right: 50px;
+}
+
+.pasimo-text-container {
+    font-size: 20px;
+}
+
+.pasimo-image-container {
+    margin: auto;
+}
+
+.pasimo-image {
+    scale: 1.7;
+    margin-left: 120px !important;
+}
+
+.pasimo-col {
+    margin-right: 75px;
+}
+
+.pasimo-h1 {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.slidehub-h1 {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.slidehub-text {
+    font-size: 20px;
+    margin: 25px !important;
 }
